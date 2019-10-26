@@ -10,7 +10,7 @@
 */
 
 import { ICommandDefinition } from "@zowe/imperative";
-import { DirectoryContentsDefinition } from "./directory-contents/DirectoryContents.definition";
+import { ListReviewsDefinition } from "./reviews/Reviews.definition";
 /**
  * [action] command definition for the [action] two group. The [action] is of imperative command definition type
  * "group", which means it must have children.
@@ -26,12 +26,10 @@ import { DirectoryContentsDefinition } from "./directory-contents/DirectoryConte
  */
 const ListDefinition: ICommandDefinition = {
     name: "list",
-    summary: "Perform \"the list [action]\" on some [objects]",
-    description: "[actions] in Zowe CLI are groups of commands. [actions] are always verbs. " +
-        "For example, for command \"zowe zos-files delete data-set\", the [action] is \"delete\".\n\n" +
-        "For this action (\"list\") we will list files, etc.",
+    summary: "List reviews, subjects etc.",
+    description: "Get a list of objects from WaniKani such as reviews or subjects",
     type: "group",
-    children: [DirectoryContentsDefinition]
+    children: [ListReviewsDefinition]
 };
 
 export = ListDefinition;

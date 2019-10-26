@@ -1,20 +1,24 @@
 {
-  "name": "@zowe/zowe-cli-sample-plugin",
-  "version": "2.0.1",
-  "description": "A sample plugin for Zowe CLI :)",
-  "homepage": "https://github.com/zowe/zowe-cli-sample-plugin#readme",
+  "name": "wanikani-cli",
+  "version": "0.0.1",
+  "description": "Wanikani CLI",
+  "homepage": "https://github.com/dogboydog/wanikani-cli#readme",
   "bugs": {
-    "url": "https://github.com/zowe/zowe-cli-sample-plugin/issues"
+    "url": "https://github.com/dogboydog/wanikani-cli/issues"
   },
   "keywords": [
-    "zowe",
+    "japanese",
     "cli",
-    "sample",
-    "plugin"
+    "learning",
+    "typescript",
+    "API"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/zowe/zowe-cli-sample-plugin.git"
+    "url": "https://github.com/dogboydog/wanikani-cli"
+  },
+  "bin": {
+    "wk": "lib/wk.js"
   },
   "main": "lib/index.js",
   "files": [
@@ -28,6 +32,7 @@
     "watch": "tsc --pretty --watch",
     "prepublishOnly": "npm run build",
     "lint": "tslint \"src/**/*.ts\"",
+    "fixlint": "npm run lint -- --fix",
     "test": "npm run test:unit && npm run test:integration && npm run test:system",
     "test:system": "env-cmd __tests__/__resources__/env/system.env jest .*/__system__/.* --coverage false",
     "test:integration": "env-cmd __tests__/__resources__/env/integration.env jest .*/__integration__/.* --coverage false",
@@ -36,10 +41,6 @@
   },
   "imperative": {
     "configurationModule": "lib/imperative.js"
-  },
-  "peerDependencies": {
-    "@zowe/cli": "^5.14.2",
-    "@zowe/imperative": "^4.2.1"
   },
   "devDependencies": {
     "@types/fs-extra": "^8.0.0",
@@ -62,7 +63,6 @@
     "typedoc": "^0.15.0",
     "typescript": "3.2.2",
     "uuid": "^3.2.1",
-    "@zowe/cli": "^5.14.2",
     "@zowe/imperative": "^4.2.1"
   },
   "jest": {
